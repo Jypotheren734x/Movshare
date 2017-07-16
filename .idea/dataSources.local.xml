@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Rails Movshare: development" uuid="55e349d0-8ea5-43b3-9b2f-ac9ea04d499e">
-      <database-info product="SQLite" version="3.16.1" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native" />
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
-      <auth-required>false</auth-required>
-      <introspection-schemas>*:main</introspection-schemas>
+    <data-source name="Rails Movshare: production" uuid="8bd27926-e841-44ab-b2e3-86c5b06abff6">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <user-name>tlrrpwxyxnyvvo</user-name>
+    </data-source>
+    <data-source name="Rails Movshare: test" uuid="5e45f8ee-96e4-4c95-96a1-a24681543879">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
     </data-source>
   </component>
 </project>
