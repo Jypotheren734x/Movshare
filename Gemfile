@@ -58,5 +58,3 @@ gem 'devise'
 gem 'paperclip'
 
 gem 'thredded', '~> 0.13.1'
-
-gem 'pushover'
