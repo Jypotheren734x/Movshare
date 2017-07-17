@@ -19,6 +19,7 @@
                   <% end %>
               <% end %>
             </div>
+            <% if policy(Thredded::Messageboard.new).create? && policy(Thredded::MessageboardGroup.new).create? %>
             <div class="fixed-action-btn horizontal click-to-toggle">
               <a class="btn-floating btn-large red">
                 <i class="material-icons">mode_edit</i>
@@ -36,6 +37,7 @@
                 <% end %>
               </ul>
             </div>
+            <% end %>
           </div>
         </div>
     <% end %>
