@@ -2,8 +2,9 @@
     <%= view_hooks.messageboards_index.messageboard.render self, messageboard: messageboard do %>
         <%= link_to messageboard_topics_path(messageboard), class: 'collection-item' do %>
             <i class="material-icons">forum</i>
-            <%= messageboard.name %> Description: <%= messageboard.description %>
-            <div class="secondary-content">
+            <span class="title"><%= messageboard.name %></span>
+            <p><%= messageboard.description %></p>
+            <p class="secondary-content">
               <%= t 'thredded.messageboard.topics_and_posts_counts',
                     topics_count: number_with_delimiter(messageboard.topics_count),
                     posts_count: number_with_delimiter(messageboard.posts_count) %>
@@ -14,7 +15,7 @@
                           user: messageboard.last_user.thredded_display_name %>
                   </p>
               <% end %>
-            </div>
+            </p>
         <% end %>
     <% end %>
 <% end %>
