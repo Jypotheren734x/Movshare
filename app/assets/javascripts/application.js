@@ -14,4 +14,6 @@
 //= require turbolinks
 //= require thredded
 //= require_tree .
-$(".dropdown-button").dropdown();
+$(function () {
+    $(".dropdown-button").dropdown();
+});
