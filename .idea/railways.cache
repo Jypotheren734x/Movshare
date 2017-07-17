@@ -1,5 +1,8 @@
                   Prefix Verb   URI Pattern                       Controller#Action
+              users_show GET    /users/show(.:format)             users#show
+              users_edit GET    /users/edit(.:format)             users#edit
               home_index GET    /home/index(.:format)             home#index
+                thredded        /                                 Thredded::Engine
         new_user_session GET    /users/sign_in(.:format)          users/sessions#new
             user_session POST   /users/sign_in(.:format)          users/sessions#create
     destroy_user_session DELETE /users/sign_out(.:format)         users/sessions#destroy
@@ -18,6 +21,79 @@ cancel_user_registration GET    /users/register/cancel(.:format)  users/registra
    new_user_confirmation GET    /users/verification/new(.:format) devise/confirmations#new
        user_confirmation GET    /users/verification(.:format)     devise/confirmations#show
                          POST   /users/verification(.:format)     devise/confirmations#create
-                   login GET    /login(.:format)                  users/sessions#new
-                  logout GET    /logout(.:format)                 users/sessions#destroy
                     root GET    /                                 home#index
+
+Routes for Thredded::Engine:
+                            theme_preview GET      /theme-preview(.:format)                                             thredded/theme_previews#show
+             mark_all_private_topics_read PATCH    /private-topics/read_state(.:format)                                 thredded/read_states#update
+                                          PUT      /private-topics/read_state(.:format)                                 thredded/read_states#update
+                preview_new_private_topic POST     /private-topics/new/preview(.:format)                                thredded/private_topic_previews#preview
+                        new_private_topic GET      /private-topics/new(.:format)                                        thredded/private_topics#new
+                            private_topic GET      /private-topics/:id(/page-:page)(.:format)                           thredded/private_topics#show {:page=>/[1-9]\d*/}
+   preview_new_private_topic_private_post POST     /private-topics/:private_topic_id/new/preview(.:format)              thredded/private_post_previews#preview
+       private_topic_private_post_preview PATCH    /private-topics/:private_topic_id/:private_post_id/preview(.:format) thredded/private_post_previews#update
+                                          PUT      /private-topics/:private_topic_id/:private_post_id/preview(.:format) thredded/private_post_previews#update
+         quote_private_topic_private_post GET      /private-topics/:private_topic_id/:id/quote(.:format)                thredded/private_posts#quote
+mark_as_unread_private_topic_private_post POST     /private-topics/:private_topic_id/:id/mark_as_unread(.:format)       thredded/private_posts#mark_as_unread
+              private_topic_private_posts POST     /private-topics/:private_topic_id(.:format)                          thredded/private_posts#create
+           new_private_topic_private_post GET      /private-topics/:private_topic_id/new(.:format)                      thredded/private_posts#new
+          edit_private_topic_private_post GET      /private-topics/:private_topic_id/:id/edit(.:format)                 thredded/private_posts#edit
+               private_topic_private_post PATCH    /private-topics/:private_topic_id/:id(.:format)                      thredded/private_posts#update
+                                          PUT      /private-topics/:private_topic_id/:id(.:format)                      thredded/private_posts#update
+                                          DELETE   /private-topics/:private_topic_id/:id(.:format)                      thredded/private_posts#destroy
+                           private_topics GET      /private-topics(.:format)                                            thredded/private_topics#index
+                                          POST     /private-topics(.:format)                                            thredded/private_topics#create
+                       edit_private_topic GET      /private-topics/:id/edit(.:format)                                   thredded/private_topics#edit
+                                          PATCH    /private-topics/:id(.:format)                                        thredded/private_topics#update
+                                          PUT      /private-topics/:id(.:format)                                        thredded/private_topics#update
+                                          DELETE   /private-topics/:id(.:format)                                        thredded/private_topics#destroy
+                   private_post_permalink GET      /private-posts/:id(.:format)                                         thredded/private_post_permalinks#show {:id=>/[1-9]\d*/}
+                           post_permalink GET      /posts/:id(.:format)                                                 thredded/post_permalinks#show {:id=>/[1-9]\d*/}
+                       autocomplete_users GET      /autocomplete-users(.:format)                                        thredded/autocomplete_users#index
+                     messageboards_search GET      /                                                                    thredded/topics#search
+                      messageboard_search GET      /:messageboard_id(.:format)                                          thredded/topics#search
+                      messageboard_groups POST     /admin/messageboard_groups(.:format)                                 thredded/messageboard_groups#create
+                   new_messageboard_group GET      /admin/messageboard_groups/new(.:format)                             thredded/messageboard_groups#new
+                       pending_moderation GET      /admin/moderation(/page-:page)(.:format)                             thredded/moderation#pending {:page=>/[1-9]\d*/}
+                       moderation_history GET      /admin/moderation/history(/page-:page)(.:format)                     thredded/moderation#history {:page=>/[1-9]\d*/}
+                         users_moderation GET      /admin/moderation/users(/page-:page)(.:format)                       thredded/moderation#users {:page=>/[1-9]\d*/}
+                          user_moderation GET      /admin/moderation/users/:id(/page-:page)(.:format)                   thredded/moderation#user {:page=>/[1-9]\d*/}
+                      moderation_activity GET      /admin/moderation/activity(/page-:page)(.:format)                    thredded/moderation#activity {:page=>/[1-9]\d*/}
+                            moderate_post POST     /admin/moderation(.:format)                                          thredded/moderation#moderate_post
+                            moderate_user POST     /admin/moderation/user/:id(.:format)                                 thredded/moderation#moderate_user
+                  edit_global_preferences GET      /preferences/edit(.:format)                                          thredded/preferences#edit
+                       global_preferences PATCH    /preferences(.:format)                                               thredded/preferences#update
+                                          PUT      /preferences(.:format)                                               thredded/preferences#update
+                         new_messageboard GET      /messageboards/new(.:format)                                         thredded/messageboards#new
+                        edit_messageboard GET      /messageboards/:id/edit(.:format)                                    thredded/messageboards#edit
+                             messageboard PATCH    /messageboards/:id(.:format)                                         thredded/messageboards#update
+                                          PUT      /messageboards/:id(.:format)                                         thredded/messageboards#update
+            edit_messageboard_preferences GET      /:messageboard_id/preferences/edit(.:format)                         thredded/preferences#edit
+                 messageboard_preferences PATCH    /:messageboard_id/preferences(.:format)                              thredded/preferences#update
+                                          PUT      /:messageboard_id/preferences(.:format)                              thredded/preferences#update
+           preview_new_messageboard_topic POST     /:messageboard_id/topics/new/preview(.:format)                       thredded/topic_previews#preview
+                   new_messageboard_topic GET      /:messageboard_id/topics/new(.:format)                               thredded/topics#new
+                      messageboard_topics GET      /:messageboard_id(/page-:page)(.:format)                             thredded/topics#index {:page=>/[1-9]\d*/}
+           categories_messageboard_topics GET      /:messageboard_id/category/:category_id(.:format)                    thredded/topics#category
+                       messageboard_topic GET      /:messageboard_id/:id(/page-:page)(.:format)                         thredded/topics#show {:page=>/[1-9]\d*/}
+                follow_messageboard_topic POST|GET /:messageboard_id/:id/follow(.:format)                               thredded/topics#follow
+              unfollow_messageboard_topic POST|GET /:messageboard_id/:id/unfollow(.:format)                             thredded/topics#unfollow
+      preview_new_messageboard_topic_post POST     /:messageboard_id/:topic_id/new/preview(.:format)                    thredded/post_previews#preview
+          messageboard_topic_post_preview PATCH    /:messageboard_id/:topic_id/:post_id/preview(.:format)               thredded/post_previews#update
+                                          PUT      /:messageboard_id/:topic_id/:post_id/preview(.:format)               thredded/post_previews#update
+            quote_messageboard_topic_post GET      /:messageboard_id/:topic_id/:id/quote(.:format)                      thredded/posts#quote
+   mark_as_unread_messageboard_topic_post POST     /:messageboard_id/:topic_id/:id/mark_as_unread(.:format)             thredded/posts#mark_as_unread
+                 messageboard_topic_posts POST     /:messageboard_id/:topic_id(.:format)                                thredded/posts#create
+              new_messageboard_topic_post GET      /:messageboard_id/:topic_id/new(.:format)                            thredded/posts#new
+             edit_messageboard_topic_post GET      /:messageboard_id/:topic_id/:id/edit(.:format)                       thredded/posts#edit
+                  messageboard_topic_post PATCH    /:messageboard_id/:topic_id/:id(.:format)                            thredded/posts#update
+                                          PUT      /:messageboard_id/:topic_id/:id(.:format)                            thredded/posts#update
+                                          DELETE   /:messageboard_id/:topic_id/:id(.:format)                            thredded/posts#destroy
+                                          POST     /:messageboard_id(.:format)                                          thredded/topics#create
+                  edit_messageboard_topic GET      /:messageboard_id/:id/edit(.:format)                                 thredded/topics#edit
+                                          PATCH    /:messageboard_id/:id(.:format)                                      thredded/topics#update
+                                          PUT      /:messageboard_id/:id(.:format)                                      thredded/topics#update
+                                          DELETE   /:messageboard_id/:id(.:format)                                      thredded/topics#destroy
+                            messageboards GET      /                                                                    thredded/messageboards#index
+                                          POST     /                                                                    thredded/messageboards#create
+                                     root GET      /                                                                    thredded/messageboards#index

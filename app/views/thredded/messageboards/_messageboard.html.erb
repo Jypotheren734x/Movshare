@@ -1,0 +1,20 @@
+<% if policy(messageboard).read? %>
+    <%= view_hooks.messageboards_index.messageboard.render self, messageboard: messageboard do %>
+        <%= link_to messageboard_topics_path(messageboard), class: 'collection-item' do %>
+            <i class="material-icons">forum</i>
+            <%= messageboard.name %> <%= messageboard.description %>
+            <div class="secondary-content">
+              <%= t 'thredded.messageboard.topics_and_posts_counts',
+                    topics_count: number_with_delimiter(messageboard.topics_count),
+                    posts_count: number_with_delimiter(messageboard.posts_count) %>
+              <% if messageboard.last_topic %>
+                  <p>
+                    <%= t 'thredded.messageboard.last_updated_by_html',
+                          time_ago: time_ago(messageboard.last_topic.last_post_at),
+                          user: messageboard.last_user.thredded_display_name %>
+                  </p>
+              <% end %>
+            </div>
+        <% end %>
+    <% end %>
+<% end %>

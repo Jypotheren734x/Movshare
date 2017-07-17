@@ -57,8 +57,4 @@ gem 'devise'
 
 gem 'paperclip'
 
-gem 'rolify'
-
-gem 'cancancan'
-
 gem 'thredded', '~> 0.13.1'

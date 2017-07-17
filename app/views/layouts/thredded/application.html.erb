@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Materialize | <%= yield :thredded_page_title %></title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
+  <%= stylesheet_link_tag 'thredded', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tag %>
+  <%= javascript_include_tag 'thredded',
+                             async: !Rails.application.config.assets.debug,
+                             defer: true,
+                             'data-turbolinks-track': 'reload' %>
+  <%== Gravatar.prefetch_dns %>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+</head>
+<body>
+<%= yield %>
+</body>
+</html>

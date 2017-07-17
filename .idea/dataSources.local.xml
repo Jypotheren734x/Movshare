@@ -8,5 +8,13 @@
     <data-source name="Rails Movshare: test" uuid="5e45f8ee-96e4-4c95-96a1-a24681543879">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
     </data-source>
+    <data-source name="Rails Movshare: development" uuid="33156475-5728-479f-90e5-57fb70f6bd06">
+      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4.1212">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>swclnywjokvgjn</user-name>
+      <introspection-schemas>dekfmod1loc7g:public</introspection-schemas>
+    </data-source>
   </component>
 </project>

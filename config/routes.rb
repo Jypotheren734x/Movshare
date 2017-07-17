@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'home/index'
+  mount Thredded::Engine => '/forum'
 
   devise_for :users, controllers: {
       sessions: 'users/sessions',
@@ -15,6 +16,7 @@ Rails.application.routes.draw do
     get 'login', to: 'users/sessions#new'
     get 'logout', to: 'users/sessions#destroy'
   end
+  resources :users, only: [:edit, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "home#index"
 end

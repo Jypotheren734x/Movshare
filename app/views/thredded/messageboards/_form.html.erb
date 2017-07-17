@@ -1,0 +1,25 @@
+<%= form_for messageboard, html: {class: 'container'} do |f| %>
+    <div class="input-field">
+      <%= f.label t('thredded.messageboard.form.title_label') %>
+      <%= f.text_field :name, required: true %>
+    </div>
+    <div class="input-field">
+      <%= f.label t('thredded.messageboard.form.description_label') %>
+      <%= f.text_field :description %>
+    </div>
+    <div class="input-field">
+      <%= f.collection_select :messageboard_group_id, Thredded::MessageboardGroup.all, :id, :name,
+                              include_blank: t('thredded.messageboard.form.no_group') %>
+      <%= f.label t('thredded.messageboard.form.messageboard_group_id_label') %>
+    </div>
+    <%= f.submit @messageboard.persisted? ? t('thredded.messageboard.update') : t('thredded.messageboard.create'),
+                 class: 'btn',
+                 'data-disable-with' => @messageboard.persisted? ?
+                                            t('thredded.messageboard.form.update_btn_submitting') :
+                                            t('thredded.messageboard.form.create_btn_submitting') %>
+<% end %>
+<script>
+    $(document).ready(function () {
+        $('select').material_select();
+    });
+</script>

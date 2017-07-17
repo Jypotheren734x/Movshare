@@ -4,3 +4,4 @@
 #   http_host: 'example.org',
 #   https: false
 # )
+ActionController::Renderer::RACK_KEY_TRANSLATION['warden'] ||= 'warden'

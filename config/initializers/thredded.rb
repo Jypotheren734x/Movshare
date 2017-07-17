@@ -14,7 +14,7 @@ Thredded.user_name_column = :username
 
 # User display name method, by default thredded uses the user_name_column defined above
 # You may want to use :to_s or some more elaborate method
-Thredded.user_display_name_method = :to_s
+# Thredded.user_display_name_method = :to_s
 
 # The path (or URL) you will use to link to your users' profiles.
 # When linking to a user, Thredded will use this lambda to spit out
@@ -28,7 +28,7 @@ end
 Thredded.current_user_method = :"current_#{Thredded.user_class_name.underscore}"
 
 # User avatar URL. rb-gravatar gem is used by default:
-Thredded.avatar_url = ->(user) { Gravatar.src(user.email, 128, 'mm') }
+Thredded.avatar_url = ->(user) {Gravatar.src(user.email, 128, 'mm')}
 
 # ==> Database Configuration
 # By default, thredded uses integers for record ID route constraints.
