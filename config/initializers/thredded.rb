@@ -150,7 +150,7 @@ Thredded.layout = 'thredded/application'
 #
 # default:
 Thredded.notifiers = [Thredded::EmailNotifier.new]
-#
+#-
 # none:
 # Thredded.notifiers = []
 #
