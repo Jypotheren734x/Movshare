@@ -1,7 +1,17 @@
 <nav class="nav-extended light-blue darken-4">
   <div class="nav-wrapper">
+    <a href="#!" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <%= render 'thredded/search/form', messageboard: messageboard_or_nil %>
     <ul class="right hide-on-med-and-down">
+      <%= render 'thredded/shared/nav/moderation' %>
+      <%= render 'thredded/shared/nav/notification_preferences', messageboard: messageboard_or_nil %>
+      <%= render 'thredded/shared/nav/private_topics' %>
+      <% if Thredded.standalone_layout? %>
+          <%= render 'thredded/shared/nav/standalone_profile' if thredded_signed_in? %>
+          <%= render 'thredded/shared/nav/standalone' %>
+      <% end %>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
       <%= render 'thredded/shared/nav/moderation' %>
       <%= render 'thredded/shared/nav/notification_preferences', messageboard: messageboard_or_nil %>
       <%= render 'thredded/shared/nav/private_topics' %>
@@ -21,3 +31,6 @@
     <% end %>
   </div>
 </nav>
+<script>
+    $(".button-collapse").sideNav();
+</script>
