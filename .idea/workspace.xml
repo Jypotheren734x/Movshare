@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3819826e-9a4c-4f95-bfca-1d7915386d7c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/thredded/shared/_nav.html.erb" afterPath="$PROJECT_DIR$/app/views/thredded/shared/_nav.html.erb" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -92,8 +91,8 @@
       <file leaf-file-name="_nav.html.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/thredded/shared/_nav.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+            <state relative-caret-position="936">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1219,7 +1218,7 @@
       <workItem from="1500072497287" duration="713000" />
       <workItem from="1500174987281" duration="4321000" />
       <workItem from="1500222047488" duration="5930000" />
-      <workItem from="1500228779730" duration="31482000" />
+      <workItem from="1500228779730" duration="31557000" />
     </task>
     <task id="LOCAL-00001" summary="Updates">
       <created>1500257222727</created>
@@ -1256,11 +1255,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500260005986</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updates">
+      <created>1500260891456</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1500260891456</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44797000" />
+    <option name="totallyTimeSpent" value="44872000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="3840" height="2130" extended-state="6" />
@@ -1717,8 +1723,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/thredded/shared/_nav.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
-          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        <state relative-caret-position="936">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
