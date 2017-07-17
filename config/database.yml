@@ -25,9 +25,9 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  encoding: unicode
-  database: d2l7amchcq0oi6
-  pool: 5
-  username: tlrrpwxyxnyvvo
-  password: 09d8c58d3a208200c1df01fce6175a53f18f1db5f0d7a7299d47f457aaca70e9
+ adapter: postgresql
+ host: ec2-107-21-99-176.compute-1.amazonaws.com                            # HOST
+ port: 5432                            # Port
+ database: dekfmod1loc7g              # Database Name
+ username: swclnywjokvgjn                   # User Name
+ password: 'cee365b8fad2c55fdc31e3cc6a184d8597ff21e75aa1fdc55cc23b854e317dfa'                  # Password
